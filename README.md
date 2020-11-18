@@ -1,11 +1,38 @@
 # code-labrary
+
 > 存放常用的代码片段，随拿随用
 
-[TOC]
+## 目录
+
+- [SASS/SCSS](#SASS/SCSS)
+
+- [JS](#JS)
+
+- [Meta 标签](#meta-标签)
+
+- [链接](#链接)
+
+- [网站图标](#网站图标)
+
+- [社交](#社交)
+
+  - [Facebook Open Graph](#facebook-open-graph)
+  - [Twitter Card](#twitter-card)
+  - [Twitter Privacy](#twitter-privacy)
+  - [Schema.org](#schemaorg)
+  - [Pinterest](#pinterest)
+  - [Facebook Instant Articles](#facebook-instant-articles)
+  - [OEmbed](#oembed)
+  - [QQ/微信](#qq微信)
+
+  
+
+
 
 ## SASS/SCSS
 
 ### 多行文本超出打点
+
 ```scss
 // 多行文本超出打点, 参数为行数
 @mixin textOver($num) {
@@ -18,6 +45,7 @@
 ```
 
 ### 绝对定位水平居中
+
 ```scss
 // 绝对定位 水平居中 参数为高度
 @mixin absHorizontalCenter($top) {
@@ -39,6 +67,7 @@
 	text-align: center;
 }
 ```
+
 ## JS
 
 ### cookie
@@ -103,6 +132,7 @@ function ipsSort(ips) {
 ```
 
 ### 获取浏览器信息
+
 ```js
 // 获取浏览器信息
 function getBrowserInfo() {
@@ -148,6 +178,7 @@ function getRandom(left, right) {
 ```
 
 ### 获取图片原始宽高
+
 ```js
 // 获取图片原始宽高
 function loadImageAsync(url) {
@@ -192,6 +223,7 @@ function supNumber(num, x) {
 ## NodeJS
 
 ### 遍历文件夹
+
 ```js
 const path = require('path')
 const fs = require('fs')
