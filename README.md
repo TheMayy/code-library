@@ -2,6 +2,7 @@
 > 存放常用的代码片段，随拿随用
 
 ## SASS/SCSS
+### 多行文本超出打点
 ```scss
 // 多行文本超出打点, 参数为行数
 @mixin textOver($num) {
@@ -11,7 +12,10 @@
 	-webkit-line-clamp: $num; //行数
 	-webkit-box-orient: vertical;
 }
+```
 
+### 绝对定位水平居中
+```scss
 // 绝对定位 水平居中 参数为高度
 @mixin absHorizontalCenter($top) {
 	position: absolute;
@@ -20,6 +24,11 @@
 	transform: translateX(-50%);
 }
 
+```
+
+### 文本水平垂直居中
+
+```scss
 // 文本水平垂直居中 参数为高度
 @mixin textCenter($height) {
 	height: $height;
@@ -27,24 +36,11 @@
 	text-align: center;
 }
 ```
-
 ## JS
 
-```js
-/*
-*功能: {在数字前以0补全指定位数}	
-*输入: {number}    (原数据,指定位数)
-*输出: {string}	"04"
-*/
-function supNumber(num, x) {
-	if ((num + "").length < x) {
-		return "0" + num;
-	} else {
-		return num
-	}
-}
+### cookie
 
-// cookie
+```js
 // 设置cookie值
 function setCookie(cname, cvalue, exdays) {
 	var d = new Date();
@@ -77,7 +73,11 @@ function checkCookie() {
 		}
 	}
 }
+```
 
+### ip排序
+
+```js
 // ip排序
 function ipsSort(ips) {
 	// ips =  ["10.10.15.130", "10.10.16.40", "127.0.0.1", "192.168.1.123", "192.168.1.38", "192.168.1.39"];
@@ -97,7 +97,10 @@ function ipsSort(ips) {
 	})
 	return ips
 }
+```
 
+### 获取浏览器信息
+```js
 // 获取浏览器信息
 function getBrowserInfo() {
 	var inBrowser = typeof window !== 'undefined';
@@ -127,7 +130,11 @@ function getBrowserInfo() {
 		isFF
 	}
 }
+```
 
+### 生成范围内随机数
+
+```js
 // 生成范围内的随机数
 function getRandom(left, right) {
 	if (right < left) return 0;
@@ -135,8 +142,10 @@ function getRandom(left, right) {
 		return Math.random() * (right - left) + left;
 	}
 }
+```
 
-
+### 获取图片原始宽高
+```js
 // 获取图片原始宽高
 function loadImageAsync(url) {
 	return new Promise(function(resolve, reject) {
@@ -159,13 +168,32 @@ function loadImageAsync(url) {
 
 ```
 
+### 数字前补零
+
+```js
+/*
+*功能: {在数字前以0补全指定位数}	
+*输入: {number}    (原数据,指定位数)
+*输出: {string}	"04"
+*/
+function supNumber(num, x) {
+	if ((num + "").length < x) {
+		return "0" + num;
+	} else {
+		return num
+	}
+}
+```
+
+
 ## NodeJS
 
+### 遍历文件夹
 ```js
 const path = require('path')
 const fs = require('fs')
 
-const basePath = 'D:/work/ruite/src/views/print/report'
+const basePath = 'D:/work/ruite/src/views/print/report' // 目标目录
 
 function mapDir(dir, callback, finish) {
   fs.readdir(dir, function(err, files) {
