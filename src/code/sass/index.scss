@@ -1,0 +1,5 @@
+@import "./sass";
+
+.icon {
+	@include changePngColor('./icon.png',red,25px,25px);
+}

@@ -56,6 +56,36 @@
 	text-align: center;
 }
 ```
+
+### png小图标赋色
+```scss
+// png小图标赋色 参数依次为:图标地址,颜色,宽度,高度
+@mixin changePngColor($url,$color,$width,$height) {
+	height: $height;
+	width: $width;
+	overflow: hidden;
+	display: inline-block;
+	&:before {
+		content: '';
+		background: url($url) no-repeat;
+		display: block;
+		background-size:$width $height;
+		height: $height;
+		width: $width;
+		position: relative;
+		left: -$width;
+		border-right: $width solid transparent;
+		filter: drop-shadow($color $width 0px);
+	}
+}
+```
+```scss
+// 示例
+.icon {
+	@include changePngColor('./icon.png',red,25px,25px);
+}
+```
+
 ## JS
 **[⬆ 返回顶部](#目录)**
 ### cookie
